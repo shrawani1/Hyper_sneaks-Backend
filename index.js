@@ -7,6 +7,9 @@ const acceptFormData = require('express-fileupload');
 const favouritesRoutes = require("./routes/favouritesRoutes");
 // Creating an express application
 const app = express();
+const fs = require('fs');
+const path = require('path');
+const https = require('https');
 
 // Configure Cors Policy
 const corsOptions = {
@@ -38,6 +41,10 @@ connectDatabase();
 app.get("/test", (req, res) => {
     res.send("Test api is working..");
 });
+const options = {
+    key: fs.readFileSync(path.resolve(__dirname, 'server.key')),
+    cert: fs.readFileSync(path.resolve(__dirname, 'server.crt')),
+  };
 //cart
 // app.use("/api/cart", cartRoutes);
 // Use favouritesRoutes for /api/favourites endpoints
@@ -53,9 +60,9 @@ app.use("/api/order", require("./routes/orderRoutes"));
 app.use('/api/contact', require('./routes/contactRoutes'))
 app.use('/api/rating',require("./routes/reviewRoutes"));
 
-// Starting the server
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}!`);
+
+https.createServer(options, app).listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
 
 // export default app

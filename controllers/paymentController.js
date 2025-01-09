@@ -36,7 +36,7 @@ const initializePayment = async (req, res) => {
       amount: totalPrice * 100, // amount should be in paisa (Rs * 100)
       purchase_order_id: OrderModelData._id, // purchase_order_id because we need to verify it later
       purchase_order_name: productNames,
-      return_url: `http://localhost:5000/api/payment/complete-khalti-payment`,
+      return_url: `https://localhost:5000/api/payment/complete-khalti-payment`,
       website_url,
     });
 

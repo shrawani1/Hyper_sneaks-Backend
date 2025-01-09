@@ -32,9 +32,13 @@ const userSchema = new mongoose.Schema({
     resetPasswordExpires: {
         type: Date,
         default: null
-    }
-
-})
+    },
+    isEmailVerified: { type: Boolean, default: false },
+        emailVerificationToken: String,
+        emailVerificationTokenExpire: Date,
+        resetPasswordToken: String,
+        resetPasswordExpire: Date,
+    });
 
 const User = mongoose.model('users',userSchema)
 module.exports = User;

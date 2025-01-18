@@ -27,5 +27,7 @@ router.get('/user/:id',userController.getUserDetails);
 router.get("/token",userController.getToken);
 
 router.get("/profile/get", userController.getCurrentProfile);
+
+router.put("/verifyEmail/:token", userController.verifyEmail);
 //Exporting the routes
 module.exports = router;

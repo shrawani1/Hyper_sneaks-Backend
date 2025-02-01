@@ -138,8 +138,8 @@ const createUser = async (req, res) => {
       passwordHistory: [hashedPassword], // Add initial password to history
       passwordLastChanged: new Date(), // Record the password change date
       isEmailVerified: false, // Initialize email verification status
-      emailVerificationToken: hashedToken, // Store hashed verification token
-      emailVerificationTokenExpire: Date.now() + 10 * 60 * 1000, // Token expires in 10 minutes
+      emailVerificationToken: hashedToken, 
+      emailVerificationTokenExpire: Date.now() + 10 * 60 * 1000, 
     });
  
     await newUser.save();
@@ -197,7 +197,7 @@ const loginUser = async (req, res) => {
 
         //find user (email)
         const user = await userModel.findOne({ email: email });
-        //found data: firstName, lastName, email, password
+        
 
         //not found(error message)
         if (!user) {

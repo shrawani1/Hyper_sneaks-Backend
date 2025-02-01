@@ -68,7 +68,7 @@ exports.getFavorite = async (req, res) => {
   }
 };
 
-// Delete item from favorites
+// Delete item from favorites //
 exports.deleteFavoriteItem = async (req, res) => {
   try {
     const { id } = req.params;

@@ -74,7 +74,7 @@ exports.deleteCartItem = async (req, res) => {
 exports.updateCartItem = async (req, res) => {
   try {
     const { id } = req.params; // Extract id from URL params
-    let { quantity, total } = req.body; // Extract quantity from request body
+    let { quantity, total } = req.body; 
 
     // Convert quantity to a number if it's provided as a string
     quantity = Number(quantity);

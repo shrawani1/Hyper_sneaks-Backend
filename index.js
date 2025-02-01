@@ -45,9 +45,8 @@ const options = {
     key: fs.readFileSync(path.resolve(__dirname, 'server.key')),
     cert: fs.readFileSync(path.resolve(__dirname, 'server.crt')),
   };
-//cart
-// app.use("/api/cart", cartRoutes);
-// Use favouritesRoutes for /api/favourites endpoints
+
+
 app.use("/api/favourite", favouritesRoutes);
 // Configuring Routes
 app.use('/api/user', require('./routes/userRoutes'));
@@ -65,5 +64,5 @@ https.createServer(options, app).listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-// export default app
+
 module.exports = app;

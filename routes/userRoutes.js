@@ -18,7 +18,7 @@ router.post ('/verify_otp', userController.verifyOtpAndSetPassword)
 router.get('/profile', userController.getUserProfile);
 router.put('/profile', userController.updateUserProfile);
  
-// Controller(Export)-> Routes (import)-> use ->(index.js)
+
 
 //get user data 
 router.get('/user/:id',userController.getUserDetails);

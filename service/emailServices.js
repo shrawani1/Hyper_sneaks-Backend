@@ -17,7 +17,7 @@ const sendEmail = async (options) => {
  
     const mailOptions = {
         from: process.env.EMAIL_FROM,
-        to: options.email,  // Ensure this is not empty
+        to: options.email,  
         subject: options.subject || "No Subject",
         text: options.message || "No Content",
     };

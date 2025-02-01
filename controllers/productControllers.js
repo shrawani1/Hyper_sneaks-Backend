@@ -86,7 +86,7 @@ const getAllProducts = async (req, res) => {
 
     }
     //fetch all products
-    //send response
+    
 
 }
 
